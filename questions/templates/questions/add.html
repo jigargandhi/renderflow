@@ -1,0 +1,26 @@
+{% extends 'questions\master.html' %}
+{% block title %}
+Ask a Question - Render Overflow
+{% endblock %}
+
+{%block content%}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+
+ <form action="/questions/add/submit" method="post">
+{% csrf_token %}
+     <div class="question_title_row">
+        <span>Title</span><input type="text" name="question_title" placeholder="Whats your programming question?. Be Specific">
+     </div>
+     <div class="question_text_row">
+         <textarea name="question_text"></textarea>
+     </div>
+     <script>
+       var simplemde = new SimpleMDE({ autosave: {enabled:true}, status:false });
+     </script>
+     <div class="question_submit_row">
+     <input type="submit" value="Post a Question" />
+     </div>
+
+</form>
+{%endblock%}

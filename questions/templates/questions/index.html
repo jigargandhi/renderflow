@@ -1,0 +1,21 @@
+{% extends 'questions/master.html' %}
+{%block content%}
+{% if latest_question_list %}
+    <div class="question_list">
+    {% for question in latest_question_list %}
+        <div class="question_summary">
+            <div class="question_score"> Some text</div>
+            <div class="question_details">
+            <a href="{% url 'questions:detail' question.id %}" >{{ question.question_title }}</a>
+                <p>
+                    {{ question.question_text }}
+                </p>
+            </div>
+
+        </div>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+{% endblock %}

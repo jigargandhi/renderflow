@@ -1,0 +1,43 @@
+form .question_title_row{
+margin:10px 0;
+}
+form .question_title_row span{
+margin-right: 10px;
+font-weight:bold;
+}
+
+form .question_title_row input
+{
+width:100%; /*change to flex*/
+padding:8px 10px;
+}
+
+form .question_submit_row input
+{
+  background-color:#0095ff;
+  padding:4px;
+  color:#fff;
+  border-color:#07c;
+  box-shadow: inset 0 1px 0 #66bfff;
+  border-radius:2px;
+}
+
+form .question_text_row
+{
+margin:10px 0;
+}
+
+.question_list{
+   margin:20px;
+}
+
+.question_summary{
+display:flex;
+flex-direction: row;
+margin:10px;
+padding:5px;
+}
+
+.question_summary .question_score{
+ width:50px;
+}

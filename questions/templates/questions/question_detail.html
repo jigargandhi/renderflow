@@ -1,0 +1,26 @@
+{% extends 'questions\master.html' %}
+{% block title %}
+Question - {{question.question_title}}
+{% endblock %}
+{%block content%}
+
+<div class="question_detail_title">  
+    {{question.question_title}}    
+</div>
+<hr/>
+<div class="question_detail_summary">
+    {{question.question_text | safe}}
+</div>
+<hr />
+<div>
+    Answer
+</div>
+<div>
+    Your Answer
+</div>
+<div class="youranswer">
+    <form>
+
+    </form>
+</div>
+{% endblock %}
