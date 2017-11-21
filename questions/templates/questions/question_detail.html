@@ -3,26 +3,57 @@
 Question - {{question.question_title}}
 {% endblock %}
 {%block content%}
-
-<div class="question_detail_title">  
-    {{question.question_title}}    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<div class="question_detail_title">
+            {{question.question_title}}    
+    </div> 
+<hr/>
+<div class="question_detail_answer">  
+    <i class="fa fa-caret-up" aria-hidden="true"></i>
+     <div class="score">
+     {{question.score}}
+    </div>
+    <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+    <div class="question_detail_summary">
+    {{question.question_text | safe}}
+</div>
+       
 </div>
 <hr/>
-<div class="question_detail_summary">
-    <div>
-    
-    </div><div></div>{{question.question_text | safe}}
-</div>
-<hr />
-<div>
-    Answer
-</div>
-<div>
-    Your Answer
-</div>
-<div class="youranswer">
-    <form>
 
+
+    {% for ans in answer %}
+<div class="clearfix">
+        <div class="answer_detail">
+            <div class="answer_score">
+                {{ans.answer_score}}
+            </div>
+            <div>
+                {{ans.answer_text}}
+            </div>
+           
+        </div>
+    <div class="answer_info" >answered {{ans.answer_date}}</div> 
+    
+    </div>
+<hr />
+    {% endfor %}
+
+<div class="answer_user_section">
+    <div class="your_answer_label">Your Answer</div>
+    <div class="youranswer">
+        <!--/questions/answer/{{question.id}}-->
+    <form action="{%url 'questions:answer' question.id %}" method="post">
+        {% csrf_token %}
+        <textarea name="answer_text"></textarea>
+        <script>
+        var simplemde = new SimpleMDE({ autosave: {enabled:true}, status:false });
+        </script>
+        <input type="submit" value="Post Your Answer" class="submit_button" />
     </form>
+    
 </div>
+</div>
+
 {% endblock %}

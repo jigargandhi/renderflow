@@ -9,13 +9,15 @@ class Question(models.Model):
     creation_date = models.DateTimeField(auto_now=True)
     score = models.IntegerField()
     tags = models.CharField(max_length=200 )
-
-
+   
 
 class Answer(models.Model):
-    answer_title = models.TextField(blank=False)
+    answer_text = models.TextField(blank=False)
     answer_date = models.DateTimeField(auto_now=True)
+    answer_score=models.IntegerField()
     question=models.ForeignKey(Question, on_delete=models.CASCADE)
+   
+
 
 
 class Tag(models.Model):

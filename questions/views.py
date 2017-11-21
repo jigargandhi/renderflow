@@ -1,11 +1,13 @@
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, redirect
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.views import generic
 import datetime
 from .models import Question, Answer, Tag
 import markdown
+import logging
 # Create your views here.
 
+logger = logging.getLogger(__name__)
 
 def index(request):
     return render(request, 'questions\index.html')
@@ -38,7 +40,21 @@ def submit(request):
 def question_detail(request, question_id):
     q = Question.objects.get(id=question_id)
     q.question_text = markdown.markdown(q.question_text)
+    ans = Answer.objects.filter(question_id=question_id).order_by('-answer_date')[:10]
     context= {
-        'question':q
+        'question':q,
+        'answer':ans
     }
     return render(request, 'questions/question_detail.html', context)
+
+def add_answer(request, question_id):
+    if request.method =='GET':
+        return redirect('questions:detail')
+    else:
+        answer = Answer();
+        answer.answer_text = request.POST['answer_text']
+        answer.answer_date = datetime.datetime.now()
+        answer.answer_score=0
+        answer.question_id = question_id;
+        answer.save(force_insert=True);
+        return HttpResponseRedirect(reverse('questions:index'))        

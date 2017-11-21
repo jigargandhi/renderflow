@@ -7,7 +7,7 @@ Ask a Question - Render Overflow
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 
- <form action="/questions/add/submit" method="post">
+ <form action="{%url 'questions:submit'  %}" method="post">
 {% csrf_token %}
      <div class="question_title_row">
         <span>Title</span><input type="text" name="question_title" placeholder="Whats your programming question?. Be Specific">
@@ -19,7 +19,7 @@ Ask a Question - Render Overflow
        var simplemde = new SimpleMDE({ autosave: {enabled:true}, status:false });
      </script>
      <div class="question_submit_row">
-     <input type="submit" value="Post a Question" />
+     <input type="submit" value="Post a Question" class="submit_button" />
      </div>
 
 </form>
