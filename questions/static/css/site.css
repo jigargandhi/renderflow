@@ -42,43 +42,54 @@ form .question_text_row {
 
 .question_detail_answer {
     display: flex;
-    flex-direction:row;
-    margin:10px 0;
+    flex-direction: row;
+    margin: 10px 0;
 }
 
     .question_detail_answer .score {
-        width:20px;
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        color: #6a737c;
     }
-    .question_detail_title{
-        font-weight:bold;
+
+.question_detail_title {
+    font-weight: bold;
+    font-size:24px;
+    margin-top:15px;
+}
+
+.question_detail_summary {
+    margin: 10px 0;
+}
+
+.answer_user_section {
+    margin: 10px 0;
+}
+
+    .answer_user_section .your_answer_label {
+        font-weight: bold;
     }
 
-.question_detail_summary{
-    margin:10px 0;
+    .answer_user_section .submit_button {
+        margin-top: 10px;
+    }
+
+
+.answer_detail {
+    display: flex;
+    flex-direction: row;
 }
 
-.answer_user_section{
-    margin:10px 0;
-}
+    .answer_detail .answer_score {
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        color: #6a737c;
+    }
 
-.answer_user_section .your_answer_label{
-    font-weight:bold;
-}
-
-.answer_user_section .submit_button{
-    margin-top:10px;
-}
-
-
-.answer_detail{
-    display:flex;
-    flex-direction:row;
-}
-
-.answer_detail .answer_score{
-    width:20px;
-}
-
-.answer_info{
-    float:right;
+.answer_info {
+    float: right;
 }

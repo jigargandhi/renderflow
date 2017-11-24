@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css'%}">
 </head>
 <body>
-  <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <div class="container">
   <a class="navbar-brand" href="#">Renderflow</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,10 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
+             </div>
 </nav>
+  <div class="container">
+     
     <main>
   {%block content%}
   {%endblock%}

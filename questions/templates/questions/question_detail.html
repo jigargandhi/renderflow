@@ -10,11 +10,12 @@ Question - {{question.question_title}}
     </div> 
 <hr/>
 <div class="question_detail_answer">  
-    <i class="fa fa-caret-up" aria-hidden="true"></i>
+    
      <div class="score">
-     {{question.score}}
+         <i class="fa fa-caret-up" aria-hidden="true"></i>
+         <span>{{question.score}}</span>     
+         <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
-    <i class="fa fa-thumbs-down" aria-hidden="true"></i>
     <div class="question_detail_summary">
     {{question.question_text | safe}}
 </div>
@@ -27,7 +28,9 @@ Question - {{question.question_title}}
 <div class="clearfix">
         <div class="answer_detail">
             <div class="answer_score">
-                {{ans.answer_score}}
+                 <i class="fa fa-caret-up" aria-hidden="true"></i>
+                <span>{{ans.answer_score}}</span>
+                 <i class="fa fa-caret-down" aria-hidden="true"></i>
             </div>
             <div>
                 {{ans.answer_text}}
