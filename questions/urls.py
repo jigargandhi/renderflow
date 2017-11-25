@@ -1,11 +1,16 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 
-from .views import index, add, submit, QuestionIndexView, question_detail, add_answer
+from .views import index, add, submit, QuestionIndexView, question_detail, add_answer, QuestionViewSet, AnswerViewSet, increase_score
+from rest_framework import routers
 
+
+router = routers.DefaultRouter()
+router.register(r'questions', QuestionViewSet)
+router.register(r'answers', AnswerViewSet)
 
 app_name = 'questions'
 urlpatterns = [
-
+     url(r'^_api$', include(router.urls)),
     url(r'^$', QuestionIndexView.as_view(), name='index'),
     
     url(r'^add$', add, name='add'),  # Urls with trailing slash do not work, Think how to make it optional
@@ -14,5 +19,6 @@ urlpatterns = [
 
     url(r'^(?P<question_id>[0-9]+)$', question_detail, name='detail'),
 
-     url(r'^(?P<question_id>[0-9]+)/answer$', add_answer, name='answer')
+    url(r'^(?P<question_id>[0-9]+)/answer$', add_answer, name='answer'),
+    url(r'^(?P<question_id>[0-9]+)/add_score$',increase_score, name='increase_score')
 ]

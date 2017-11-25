@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'questions.apps.QuestionsConfig',
+     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -145,4 +146,11 @@ LOGGING = {
             'level': 'ERROR'
         }
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+      # 'rest_framework.permissions.IsAdminUser',
+    ],
+    'PAGE_SIZE': 10
 }

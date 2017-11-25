@@ -39,6 +39,9 @@
     <Compile Include="questions\migrations\0004_auto_20171121_1114.py" />
     <Compile Include="questions\migrations\__init__.py" />
     <Compile Include="questions\models.py" />
+    <Compile Include="questions\serializers.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="questions\tests.py" />
     <Compile Include="questions\urls.py" />
     <Compile Include="questions\views.py" />
@@ -107,10 +110,12 @@
     <Content Include="questions\static\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="questions\static\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="questions\static\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="questions\static\js\question_detail.js" />
     <Content Include="questions\templates\questions\add.html" />
     <Content Include="questions\templates\questions\index.html" />
     <Content Include="questions\templates\questions\master.html" />
     <Content Include="questions\templates\questions\question_detail.html" />
+    <Content Include="README.md" />
     <Content Include="renderflow\__pycache__\settings.cpython-35.pyc" />
     <Content Include="renderflow\__pycache__\urls.cpython-35.pyc" />
     <Content Include="renderflow\__pycache__\wsgi.cpython-35.pyc" />
@@ -130,6 +135,7 @@
     <Folder Include="questions\static\font-awesome-4.7.0\fonts\" />
     <Folder Include="questions\static\font-awesome-4.7.0\less\" />
     <Folder Include="questions\static\font-awesome-4.7.0\scss\" />
+    <Folder Include="questions\static\js\" />
     <Folder Include="questions\templates\" />
     <Folder Include="questions\templates\questions\" />
     <Folder Include="renderflow\" />
