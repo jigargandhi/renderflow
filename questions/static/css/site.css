@@ -56,8 +56,8 @@ form .question_text_row {
 
 .question_detail_title {
     font-weight: bold;
-    font-size:24px;
-    margin-top:15px;
+    font-size: 24px;
+    margin-top: 15px;
 }
 
 .question_detail_summary {
@@ -92,4 +92,17 @@ form .question_text_row {
 
 .answer_info {
     float: right;
+}
+
+
+.vote_up {
+    color: rgb(244,128,36);
+}
+
+.vote {
+    cursor: pointer;
+}
+
+.vote_off {
+    cursor: default;
 }

@@ -12,9 +12,9 @@ Question - {{question.question_title}}
 <div class="question_detail_answer">  
     
      <div class="score">
-         <i class="fa fa-caret-up" aria-hidden="true"></i>
+         <i class="fa fa-caret-up" id="vote_question_up" data-questionid="{{question.id}}" aria-hidden="true"></i>
          <span>{{question.score}}</span>     
-         <i class="fa fa-caret-down" aria-hidden="true"></i>
+         <i class="fa fa-caret-down" id="vote_question_down" aria-hidden="true"></i>
     </div>
     <div class="question_detail_summary">
     {{question.question_text | safe}}
@@ -58,5 +58,11 @@ Question - {{question.question_title}}
     
 </div>
 </div>
+
+{% endblock %}
+
+{% block script %} 
+{% load static %}
+<script type="text/javascript" src='{% static "js/question_detail.js"%}'></script>
 
 {% endblock %}
