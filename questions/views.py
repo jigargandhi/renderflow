@@ -7,6 +7,9 @@ import markdown
 import logging
 from rest_framework import viewsets
 from .serializers import QuestionSerializer, AnswerSerializer
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 # Create your views here.
 
 logger = logging.getLogger(__name__)
@@ -65,8 +68,16 @@ def increase_score(request, question_id):
     if request.method !='POST':
         return HttpResponseNotAllowed("")
     else:
-        q=Questions.objects.get(id=question_id)
+        q=Question.objects.get(id=question_id)
         q.score= q.score+1;
+        q.save();
+        return JsonResponse({'newscore':q.score});
+def decrease_score(request, question_id):
+    if request.method !='POST':
+        return HttpResponseNotAllowed("")
+    else:
+        q=Question.objects.get(id=question_id)
+        q.score= q.score-1;
         q.save();
         return JsonResponse({'newscore':q.score});
              

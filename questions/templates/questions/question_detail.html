@@ -13,8 +13,8 @@ Question - {{question.question_title}}
     
      <div class="score">
          <i class="fa fa-caret-up" id="vote_question_up" data-questionid="{{question.id}}" aria-hidden="true"></i>
-         <span>{{question.score}}</span>     
-         <i class="fa fa-caret-down" id="vote_question_down" aria-hidden="true"></i>
+         <span id="question_score">{{question.score}}</span>     
+         <i class="fa fa-caret-down" id="vote_question_down" data-questionid="{{question.id}}" aria-hidden="true"></i>
     </div>
     <div class="question_detail_summary">
     {{question.question_text | safe}}
