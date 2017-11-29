@@ -7,7 +7,7 @@ function BindEventListeners() {
         var questionId = +$(this).data('questionid');
         var that = this;
         increment_score(questionId).done(function (e) {
-            $("#question_score").text(e.newscore);
+            $("#question_score").text(e.score);
             $(that).off("click.vote");
         });
     });
@@ -16,7 +16,7 @@ function BindEventListeners() {
         var questionId = +$(this).data('questionid');
         var that = this;
         decrement_score(questionId).done(function (e) {
-            $("#question_score").text(e.newscore);
+            $("#question_score").text(e.score);
             $(that).off("click.vote");
         });
     });
@@ -24,12 +24,12 @@ function BindEventListeners() {
 function increment_score(question_id) {
     return $.ajax({
         method: 'POST',
-        url: '/questions/' + question_id + '/add_score'
+        url: '/add_score/' + question_id + ''
     })
 }
 function decrement_score(question_id) {
     return $.ajax({
         method: 'POST',
-        url: '/questions/' + question_id + '/sub_score'
+        url: '/sub_score/' + question_id 
     })
 }
