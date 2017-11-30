@@ -42,6 +42,9 @@
     <Compile Include="questions\serializers.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="questions\tagview.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="questions\tests.py" />
     <Compile Include="questions\urls.py" />
     <Compile Include="questions\views.py" />
@@ -111,6 +114,10 @@
     <Content Include="questions\static\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="questions\static\font-awesome-4.7.0\scss\_variables.scss" />
     <Content Include="questions\static\js\question_detail.js" />
+    <Content Include="questions\static\tagEditor-1.0.10\jquery.caret.min.js" />
+    <Content Include="questions\static\tagEditor-1.0.10\jquery.tag-editor.css" />
+    <Content Include="questions\static\tagEditor-1.0.10\jquery.tag-editor.js" />
+    <Content Include="questions\static\tagEditor-1.0.10\jquery.tag-editor.min.js" />
     <Content Include="questions\templates\questions\add.html" />
     <Content Include="questions\templates\questions\index.html" />
     <Content Include="questions\templates\questions\master.html" />
@@ -136,6 +143,7 @@
     <Folder Include="questions\static\font-awesome-4.7.0\less\" />
     <Folder Include="questions\static\font-awesome-4.7.0\scss\" />
     <Folder Include="questions\static\js\" />
+    <Folder Include="questions\static\tagEditor-1.0.10\" />
     <Folder Include="questions\templates\" />
     <Folder Include="questions\templates\questions\" />
     <Folder Include="renderflow\" />
