@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'bootstrap-4.0.0-beta.2-dist/css/bootstrap-grid.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/site.css'%}">
     <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'tagEditor-1.0.10/jquery.tag-editor.css' %}" />
     {% csrf_token %}
     
 </head>
@@ -22,10 +23,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/questions">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{%url 'home' %}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/questions/add">Ask a Question</a>
+        <a class="nav-link" href="{% url 'questions:add'}">Ask a Question</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -45,7 +46,9 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script type="text/javascript" src="{% static 'bootstrap-4.0.0-beta.2-dist/js/bootstrap.min.js'%}" ></script>
-    <script type="text/javascript">
+  <script type="text/javascript" src="{% static 'tagEditor-1.0.10/jquery.caret.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'tagEditor-1.0.10/jquery.tag-editor.js' %}"></script>
+  <script type="text/javascript">
         // using jQuery
         var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
         function csrfSafeMethod(method) {
