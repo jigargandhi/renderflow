@@ -1,4 +1,4 @@
-from .models import Question, Answer
+from .models import Question, Answer, Tag
 from rest_framework import serializers
 
 
@@ -12,3 +12,8 @@ class AnswerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Answer
         fields = ('answer_text', 'answer_score')
+
+class TagSerializer(serializers.ListSerializer):
+    class Meta:
+        model= Tag
+        field =('tag_name','tag_count')

@@ -101,3 +101,6 @@ class AnswerViewSet(viewsets.ModelViewSet):
     """
     queryset = Answer.objects.all()
     serializer_class = AnswerSerializer
+
+def tagview(request):
+    return render(request,'questions/taglist.html')
