@@ -22,6 +22,7 @@ class Answer(models.Model):
 
 class Tag(models.Model):
     tag_name=models.CharField(max_length=20)
+    tag_description=models.TextField(default="")
     tag_count=models.IntegerField()
 
 

@@ -37,6 +37,7 @@
     <Compile Include="questions\migrations\0002_auto_20171121_1106.py" />
     <Compile Include="questions\migrations\0003_auto_20171121_1112.py" />
     <Compile Include="questions\migrations\0004_auto_20171121_1114.py" />
+    <Compile Include="questions\migrations\0005_tag_tag_description.py" />
     <Compile Include="questions\migrations\__init__.py" />
     <Compile Include="questions\models.py" />
     <Compile Include="questions\serializers.py">
@@ -122,6 +123,8 @@
     <Content Include="questions\templates\questions\index.html" />
     <Content Include="questions\templates\questions\master.html" />
     <Content Include="questions\templates\questions\question_detail.html" />
+    <Content Include="questions\templates\questions\tag.html" />
+    <Content Include="questions\templates\questions\taglist.html" />
     <Content Include="README.md" />
     <Content Include="renderflow\__pycache__\settings.cpython-35.pyc" />
     <Content Include="renderflow\__pycache__\urls.cpython-35.pyc" />

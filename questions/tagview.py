@@ -1,8 +1,7 @@
-
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-
+from django.shortcuts import render
 from .models import Tag
 from .serializers import  TagSerializer
 
@@ -12,7 +11,7 @@ class TagView(APIView):
     Tag view specifies options to create tags
     """
 
-    def get(self):
+    def get(self, request, format=None):
         """
         Responds to get method, returns TagList
         :return: Response
@@ -21,7 +20,7 @@ class TagView(APIView):
         serializer = TagSerializer(tags, many=True)
         return Response(serializer.data)
 
-    def post(self, request):
+    def post(self, request, format=None):
         """
         Save tag to database
         :param request: DRF Request
@@ -32,3 +31,7 @@ class TagView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+def index(request):
+    return render(request,'questions/tag.html')

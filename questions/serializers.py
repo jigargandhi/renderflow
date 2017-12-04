@@ -13,7 +13,7 @@ class AnswerSerializer(serializers.HyperlinkedModelSerializer):
         model = Answer
         fields = ('answer_text', 'answer_score')
 
-class TagSerializer(serializers.ListSerializer):
+class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model= Tag
-        field =('tag_name','tag_count')
+        fields =('tag_name','tag_count','tag_description')
